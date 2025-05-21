@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Yönetim Paneli</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="login-box">
+            <img src="https://iste.edu.tr/files/dikey_logo.png" alt="Logo">
+            <h2>Chatbot</h2>
+            <form method="POST">
+                <div class="textbox">
+
+                    <input type="text" id="name" name="name" placeholder="Ad Soyad" required>
+                </div>
+                <div class="textbox">
+
+                    <input type="text" id="question" name="question" placeholder="Soru" required>
+                </div>
+                <div class="textbox">
+
+                    <textarea id="answer" name="answer" placeholder="Cevap" rows="4" required></textarea>
+                </div>
+                <div class="textbox">
+
+                    <select id="sentiment" name="sentiment" required>
+                        <option value="">Seçiniz</option>
+                        <option value="Olumlu">Olumlu</option>
+                        <option value="Olumsuz">Olumsuz</option>
+                    </select>
+                </div>
+                <div class="textbox">
+
+                    <input type="text" id="topic" name="topic" placeholder="Konu" required>
+                </div>
+
+                <button type="submit">Ekle</button>
+            </form>
+            {% if msg %}
+            <p style="color: black; text-align: center;">{{ msg }}</p>
+            {% endif %}
+            <div class="logout">
+                <a href="/logout">Çıkış Yap</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

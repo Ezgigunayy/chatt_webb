@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="https://iste.edu.tr/files/dikey_logo.png" alt="yazı" style="width:120px;height:80px;" >
+            <h2>Kayıt Ol</h2>
+            <form method="POST" action="/register">
+                <div class="textbox">
+                    <input type="text" id="student_number" name="student_number" required>
+                    <label for="student_number">Öğrenci Numarası</label>
+                </div>
+                <div class="textbox">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Şifre</label>
+                </div>
+                <div class="textbox">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Ad Soyad</label>
+                </div>
+                <button type="submit" class="btn">Kayıt Ol</button>
+            </form>
+            <p>Zaten üyeliğiniz var mı? <a href="/">Giriş Yapın</a></p>
+            <p>{{ msg }}</p>
+        </div>
+    </div>
+</body>
+</html>
